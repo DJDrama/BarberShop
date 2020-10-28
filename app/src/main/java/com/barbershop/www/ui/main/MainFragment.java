@@ -35,7 +35,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if (view == binding.clPomadeStyle) {
-            Navigation.findNavController(view).navigate(R.id.action_mainFragment2_to_storesFragment);
+            Navigation.findNavController(view).navigate(R.id.action_mainFragment2_to_styleFragment);
         } else if (view == binding.pomadeGoods) {
             Navigation.findNavController(view).navigate(R.id.action_mainFragment2_to_goodsFragment);
         } else {

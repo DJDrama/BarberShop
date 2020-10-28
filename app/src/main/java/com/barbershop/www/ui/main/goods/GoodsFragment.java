@@ -10,7 +10,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.barbershop.www.databinding.FragmentGoodsBinding;
-import com.barbershop.www.databinding.FragmentStoreBinding;
 
 public class GoodsFragment extends Fragment {
     private FragmentGoodsBinding binding;

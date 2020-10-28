@@ -8,7 +8,7 @@
         android:id="@+id/mainFragment2"
         android:name="com.barbershop.www.ui.main.MainFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment2_to_goodsFragment"
             app:destination="@id/goodsFragment" />
@@ -22,13 +22,30 @@
     <fragment
         android:id="@+id/goodsFragment"
         android:name="com.barbershop.www.ui.main.goods.GoodsFragment"
-        android:label="GoodsFragment" />
+        android:label="GoodsFragment"
+        tools:layout="@layout/fragment_goods" />
     <fragment
         android:id="@+id/styleFragment"
         android:name="com.barbershop.www.ui.main.style.StyleFragment"
-        android:label="StyleFragment" />
+        android:label="@string/pomade_style"
+        tools:layout="@layout/fragment_style">
+        <action
+            android:id="@+id/action_styleFragment_to_styleDetailFragment"
+            app:destination="@id/styleDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/storesFragment"
         android:name="com.barbershop.www.ui.main.store.StoresFragment"
-        android:label="StoresFragment" />
+        android:label="StoresFragment"
+        tools:layout="@layout/fragment_store" />
+    <fragment
+        android:id="@+id/styleDetailFragment"
+        android:name="com.barbershop.www.ui.main.style.StyleDetailFragment"
+        android:label="@string/detail"
+        tools:layout="@layout/fragment_style_detail">
+
+        <argument
+            android:name="style"
+            app:argType="com.barbershop.www.model.Style" />
+    </fragment>
 </navigation>
