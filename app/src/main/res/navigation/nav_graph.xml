@@ -22,7 +22,7 @@
     <fragment
         android:id="@+id/goodsFragment"
         android:name="com.barbershop.www.ui.main.goods.GoodsFragment"
-        android:label="GoodsFragment"
+        android:label="@string/pomade_brand"
         tools:layout="@layout/fragment_goods" />
     <fragment
         android:id="@+id/styleFragment"
