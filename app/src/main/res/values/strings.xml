@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">POSS</string>
     <string name="description">(Pomade style hair`s)</string>
+    <string name="pomade_style">포마드 스타일</string>
+    <string name="pomade_brand">포마드 제품</string>
+    <string name="pomade_style_description">포마드 스타일에 대해 알아보세요!</string>
+    <string name="brand_description">포마드 제품 종류에 대해 알아보세요!</string>
+    <string name="pomade_store">매장 정보</string>
+    <string name="store_description">바버샵 매장에 대해 알아보세요!</string>
 </resources>
