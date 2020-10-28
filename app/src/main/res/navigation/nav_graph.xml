@@ -23,7 +23,11 @@
         android:id="@+id/goodsFragment"
         android:name="com.barbershop.www.ui.main.goods.GoodsFragment"
         android:label="@string/pomade_brand"
-        tools:layout="@layout/fragment_goods" />
+        tools:layout="@layout/fragment_goods">
+        <action
+            android:id="@+id/action_goodsFragment_to_goodsItemFragment"
+            app:destination="@id/goodsItemFragment" />
+    </fragment>
     <fragment
         android:id="@+id/styleFragment"
         android:name="com.barbershop.www.ui.main.style.StyleFragment"
@@ -47,5 +51,26 @@
         <argument
             android:name="style"
             app:argType="com.barbershop.www.model.Style" />
+    </fragment>
+    <fragment
+        android:id="@+id/goodsItemFragment"
+        android:name="com.barbershop.www.ui.main.goods.GoodsItemFragment"
+        android:label="@string/detail"
+        tools:layout="@layout/fragment_goods_item">
+        <argument
+            android:name="brand"
+            app:argType="com.barbershop.www.model.Brand" />
+        <action
+            android:id="@+id/action_goodsItemFragment_to_goodsItemDetailFragment"
+            app:destination="@id/goodsItemDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/goodsItemDetailFragment"
+        tools:layout="@layout/fragment_goods_item_detail"
+        android:name="com.barbershop.www.ui.main.goods.GoodsItemDetailFragment"
+        android:label="@string/detail" >
+        <argument
+            android:name="item"
+            app:argType="com.barbershop.www.model.Item" />
     </fragment>
 </navigation>

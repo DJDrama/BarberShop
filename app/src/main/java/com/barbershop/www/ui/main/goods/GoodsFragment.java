@@ -8,12 +8,15 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.barbershop.www.R;
 import com.barbershop.www.databinding.FragmentGoodsBinding;
 import com.barbershop.www.model.Brand;
 import com.barbershop.www.model.Item;
+import com.barbershop.www.ui.main.style.StyleFragmentDirections;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +42,7 @@ public class GoodsFragment extends Fragment implements OnGoodClickedListener {
     }
 
     private void addItems() {
+        brandList.clear();
         //팁탑
         brandList.add(new Brand("Tip Top", R.drawable.tiptop, "TIPTOP 바버샵 포마드 4종 오리지널/매트/스트롱홀드 팁탑 수성포마드.", 0,
                 new ArrayList<Item>() {{
@@ -70,6 +74,7 @@ public class GoodsFragment extends Fragment implements OnGoodClickedListener {
 
     @Override
     public void onGoodClicked(Brand brand) {
-
+        NavDirections action = GoodsFragmentDirections.actionGoodsFragmentToGoodsItemFragment(brand);
+        Navigation.findNavController(binding.getRoot()).navigate(action);
     }
 }

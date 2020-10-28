@@ -10,4 +10,9 @@
     <string name="extra_images">어울리는 수염</string>
     <string name="hair_method">손질 방법</string>
     <string name="detail">자세히</string>
+    <string name="evaluation">평가</string>
+    <string name="setting">세팅력</string>
+    <string name="gojung">고정력</string>
+    <string name="balim">발림성</string>
+    <string name="shining">광택성</string>
 </resources>

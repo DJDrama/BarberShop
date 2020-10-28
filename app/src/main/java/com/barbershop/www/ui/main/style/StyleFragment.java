@@ -40,6 +40,7 @@ public class StyleFragment extends Fragment implements OnStyleClickListener {
     }
 
     private void addItems() {
+        styleList.clear();
         styleList.add(new Style("Man Bun", "전체적으로 윗머리를 길러서 뒤로 묵어 주는 스타일", R.drawable.manbun,
                 new ArrayList() {{
                     add(R.drawable.balbo);
