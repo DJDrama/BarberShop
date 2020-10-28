@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.barbershop.www.databinding.ActivitySplashScreenBinding;
-import com.barbershop.www.ui.main.MainActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
