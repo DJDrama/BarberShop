@@ -50,6 +50,8 @@ public class StyleFragment extends Fragment implements OnStyleClickListener {
                 new ArrayList() {{
                     add(R.drawable.hungarian);
                     add(R.drawable.shaftbeard);
+                    add(R.drawable.balbo);
+                    add(R.drawable.chincurtain);
                     add(R.drawable.classicfullbeard);
                 }}));
         styleList.add(new Style("Side Swept", "윗머리를 길게 길러서 한쪽으로 쓸어 넘기고 고정시키는 스타일", R.drawable.sideswept,

@@ -53,4 +53,11 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment:$nav_version"
     implementation "androidx.navigation:navigation-ui:$nav_version"
 
+    // -- Google Play Services - Location, maps
+    def version_gms_location = "17.1.0"
+    implementation "com.google.android.gms:play-services-location:$version_gms_location"
+
+    def maps_version = "3.1.0-beta"
+    implementation "com.google.android.libraries.maps:maps:$maps_version"
+
 }

@@ -40,8 +40,12 @@
     <fragment
         android:id="@+id/storesFragment"
         android:name="com.barbershop.www.ui.main.store.StoresFragment"
-        android:label="StoresFragment"
-        tools:layout="@layout/fragment_store" />
+        android:label="@string/pomade_store"
+        tools:layout="@layout/fragment_store" >
+        <action
+            android:id="@+id/action_storesFragment_to_storeDetailFragment"
+            app:destination="@id/storeDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/styleDetailFragment"
         android:name="com.barbershop.www.ui.main.style.StyleDetailFragment"
@@ -66,11 +70,20 @@
     </fragment>
     <fragment
         android:id="@+id/goodsItemDetailFragment"
-        tools:layout="@layout/fragment_goods_item_detail"
         android:name="com.barbershop.www.ui.main.goods.GoodsItemDetailFragment"
-        android:label="@string/detail" >
+        android:label="@string/detail"
+        tools:layout="@layout/fragment_goods_item_detail">
         <argument
             android:name="item"
             app:argType="com.barbershop.www.model.Item" />
+    </fragment>
+    <fragment
+        android:id="@+id/storeDetailFragment"
+        android:name="com.barbershop.www.ui.main.store.StoreDetailFragment"
+        tools:layout="@layout/fragment_store_detail"
+        android:label="@string/detail" >
+        <argument
+            android:name="store"
+            app:argType="com.barbershop.www.model.Store" />
     </fragment>
 </navigation>

@@ -15,4 +15,5 @@
     <string name="gojung">고정력</string>
     <string name="balim">발림성</string>
     <string name="shining">광택성</string>
+    <string name="location">위치 정보</string>
 </resources>
