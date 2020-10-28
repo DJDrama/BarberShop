@@ -1,5 +1,7 @@
 package com.barbershop.www.ui.main.store;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -40,6 +42,11 @@ public class StoreDetailFragment extends Fragment implements OnMapReadyCallback 
         binding.tvTitle.setText(store.getName());
         binding.tvAddress.setText(store.getAddress());
         binding.tvPhone.setText(store.getPhone());
+        binding.tvPhone.setOnClickListener(view1 -> {
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse("tel:" + store.getPhone()));
+            startActivity(intent);
+        });
 
         binding.mapView.onCreate(savedInstanceState);
         binding.mapView.getMapAsync(this);
