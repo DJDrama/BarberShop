@@ -10,15 +10,7 @@ public class Store implements Parcelable {
     private double longitude;
     private int image;
     private String phone;
-
-    public Store(String name, String address, double latitude, double longitude, int image, String phone) {
-        this.name = name;
-        this.address = address;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.image = image;
-        this.phone = phone;
-    }
+    private double distanceDiff;
 
     protected Store(Parcel in) {
         name = in.readString();
@@ -27,6 +19,7 @@ public class Store implements Parcelable {
         longitude = in.readDouble();
         image = in.readInt();
         phone = in.readString();
+        distanceDiff = in.readDouble();
     }
 
     public static final Creator<Store> CREATOR = new Creator<Store>() {
@@ -65,6 +58,23 @@ public class Store implements Parcelable {
         return phone;
     }
 
+    public double getDistanceDiff() {
+        return distanceDiff;
+    }
+
+    public void setDistanceDiff(double distanceDiff) {
+        this.distanceDiff = distanceDiff;
+    }
+
+    public Store(String name, String address, double latitude, double longitude, int image, String phone) {
+        this.name = name;
+        this.address = address;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.image = image;
+        this.phone = phone;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -78,5 +88,6 @@ public class Store implements Parcelable {
         parcel.writeDouble(longitude);
         parcel.writeInt(image);
         parcel.writeString(phone);
+        parcel.writeDouble(distanceDiff);
     }
 }

@@ -1,5 +1,6 @@
 package com.barbershop.www.ui.main.store;
 
+import android.location.Location;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -10,6 +11,8 @@ import com.barbershop.www.databinding.ItemLayoutStoreBinding;
 import com.barbershop.www.model.Store;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 interface OnStoreClickListener {
@@ -25,11 +28,22 @@ public class StoreRecyclerViewAdapter extends RecyclerView.Adapter<StoreRecycler
         this.onStoreClickListener = onStoreClickListener;
     }
 
-    void submitList(List<Store> storeList) {
+    void submitList(List<Store> storeList, Location location) {
         if (this.storeList.size() != 0)
             this.storeList.clear();
-        this.storeList.addAll(storeList);
+        //this.storeList.addAll(storeList);
+        for(Store store: storeList){
+            store.setDistanceDiff(calculateDistance(store.getLatitude(), store.getLongitude(), location));
+            this.storeList.add(store);
+        }
+        this.storeList.sort((store, t1) -> (int) (store.getDistanceDiff() - t1.getDistanceDiff()));
         notifyDataSetChanged();
+    }
+    private double calculateDistance(double lat, double lon, Location location){
+        Location cur = new Location("shop");
+        cur.setLatitude(lat);
+        cur.setLongitude(lon);
+        return cur.distanceTo(location);
     }
 
     @NonNull
@@ -66,6 +80,7 @@ public class StoreRecyclerViewAdapter extends RecyclerView.Adapter<StoreRecycler
             binding.textView2.setText(store.getName());
             binding.textView3.setText(store.getAddress());
             binding.imageView.setImageResource(store.getImage());
+            binding.textView5.setText(store.getDistanceDiff()/1000 + "km");
         }
     }
 }
