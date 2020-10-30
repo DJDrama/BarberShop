@@ -22,7 +22,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:id="@+id/horizontal_recyclerview"
             tools:orientation="horizontal"
             tools:listitem="@layout/item_layout_style_picture"
             android:layout_height="wrap_content"/>

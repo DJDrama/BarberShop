@@ -65,7 +65,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             });
             binding.textView2.setText(style.getTitle());
             binding.textView3.setText(style.getDescription());
-            binding.imageView.setImageResource(style.getDrawableId());
+            binding.imageView.setImageResource(style.getDrawableId().get(0));
         }
     }
 }

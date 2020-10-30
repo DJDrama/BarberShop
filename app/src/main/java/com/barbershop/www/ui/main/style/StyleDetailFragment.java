@@ -13,10 +13,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.barbershop.www.databinding.FragmentStyleDetailBinding;
 import com.barbershop.www.model.Style;
 
-public class StyleDetailFragment extends Fragment {
+public class StyleDetailFragment extends Fragment implements OnPhotoClickListener {
     private FragmentStyleDetailBinding binding;
     private GridAdapter adapter;
-
+    private HorizontalRecyclerviewAdapter horizontalRecyclerviewAdapter;
 
     @Nullable
     @Override
@@ -28,17 +28,33 @@ public class StyleDetailFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        setRecyclerView();
+        setTopRecyclerview();
+        setBottomRecyclerview();
+
         Style style = (Style) getArguments().get("style");
-        binding.imageView4.setImageResource(style.getDrawableId());
+        binding.imageView4.setImageResource(style.getDrawableId().get(0));
         binding.tvTitle.setText(style.getTitle());
         binding.tvDesc.setText(style.getDescription());
-        adapter.submitList(style.getBeardList());
-    }
 
-    private void setRecyclerView(){
+        horizontalRecyclerviewAdapter.submitList(style.getDrawableId());
+        adapter.submitList(style.getBeardList());
+
+    }
+    private void setTopRecyclerview(){
+        horizontalRecyclerviewAdapter = new HorizontalRecyclerviewAdapter(this);
+        binding.horizontalRecyclerview.setHasFixedSize(true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this.getContext(), LinearLayoutManager.HORIZONTAL, false);
+        binding.horizontalRecyclerview.setLayoutManager(layoutManager);
+        binding.horizontalRecyclerview.setAdapter(horizontalRecyclerviewAdapter);
+    }
+    private void setBottomRecyclerview(){
         adapter = new GridAdapter();
         binding.recyclerView.setHasFixedSize(true);
         binding.recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onPhotoClicked(int drawable) {
+        binding.imageView4.setImageResource(drawable);
     }
 }

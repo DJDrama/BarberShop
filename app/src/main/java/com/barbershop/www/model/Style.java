@@ -10,19 +10,11 @@ public class Style implements Parcelable {
     private String title;
     private String description;
     private List<Integer> beardList;
-    private int drawableId;
-
-    public Style(String title, String description, int drawableId, List<Integer> beardList) {
-        this.title = title;
-        this.description = description;
-        this.beardList = beardList;
-        this.drawableId = drawableId;
-    }
+    private List<Integer> drawableId;
 
     protected Style(Parcel in) {
         title = in.readString();
         description = in.readString();
-        drawableId = in.readInt();
     }
 
     public static final Creator<Style> CREATOR = new Creator<Style>() {
@@ -49,8 +41,15 @@ public class Style implements Parcelable {
         return beardList;
     }
 
-    public int getDrawableId() {
+    public List<Integer> getDrawableId() {
         return drawableId;
+    }
+
+    public Style(String title, String description, List<Integer> drawableId, List<Integer> beardList) {
+        this.title = title;
+        this.description = description;
+        this.beardList = beardList;
+        this.drawableId = drawableId;
     }
 
     @Override
@@ -62,6 +61,5 @@ public class Style implements Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(title);
         parcel.writeString(description);
-        parcel.writeInt(drawableId);
     }
 }

@@ -41,12 +41,21 @@ public class StyleFragment extends Fragment implements OnStyleClickListener {
 
     private void addItems() {
         styleList.clear();
-        styleList.add(new Style("Man Bun", "전체적으로 윗머리를 길러서 뒤로 묵어 주는 스타일", R.drawable.manbun,
+        styleList.add(new Style("Man Bun", "전체적으로 윗머리를 길러서 뒤로 묵어 주는 스타일",
+                new ArrayList() {{
+                    add(R.drawable.manbun);
+                    add(R.drawable.quiff);
+                    add(R.drawable.sideswept);
+
+                }},
                 new ArrayList() {{
                     add(R.drawable.balbo);
                     add(R.drawable.chincurtain);
                 }}));
-        styleList.add(new Style("Quiff", "옆머리는 완전 붙이고 앞머리를 풍성하게 볼륨감을 주는 스타일", R.drawable.quiff,
+        styleList.add(new Style("Quiff", "옆머리는 완전 붙이고 앞머리를 풍성하게 볼륨감을 주는 스타일",
+                new ArrayList() {{
+                    add(R.drawable.quiff);
+                }},
                 new ArrayList() {{
                     add(R.drawable.hungarian);
                     add(R.drawable.shaftbeard);
@@ -54,16 +63,25 @@ public class StyleFragment extends Fragment implements OnStyleClickListener {
                     add(R.drawable.chincurtain);
                     add(R.drawable.classicfullbeard);
                 }}));
-        styleList.add(new Style("Side Swept", "윗머리를 길게 길러서 한쪽으로 쓸어 넘기고 고정시키는 스타일", R.drawable.sideswept,
+        styleList.add(new Style("Side Swept", "윗머리를 길게 길러서 한쪽으로 쓸어 넘기고 고정시키는 스타일",
                 new ArrayList() {{
-                        add(R.drawable.balbo);
-                        add(R.drawable.shaftbeard);
-                    }}));
-        styleList.add(new Style("Slick Back", "윗머리를 전체적으로 뒤로 쓸어 넘겨서 고정 시키는 스타일", R.drawable.slickback,
+                    add(R.drawable.sideswept);
+                }},
+                new ArrayList() {{
+                    add(R.drawable.balbo);
+                    add(R.drawable.shaftbeard);
+                }}));
+        styleList.add(new Style("Slick Back", "윗머리를 전체적으로 뒤로 쓸어 넘겨서 고정 시키는 스타일",
+                new ArrayList() {{
+                    add(R.drawable.slickback);
+                }},
                 new ArrayList() {{
                     add(R.drawable.classicfullbeard);
                 }}));
-        styleList.add(new Style("Swept Back", "Swept Back Description Needed", R.drawable.sweptback,
+        styleList.add(new Style("Swept Back", "Swept Back Description Needed",
+                new ArrayList() {{
+                    add(R.drawable.sweptback);
+                }},
                 new ArrayList() {{
                     add(R.drawable.classicfullbeard);
                     add(R.drawable.chincurtain);
